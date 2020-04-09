@@ -18,14 +18,11 @@ void ReadFile(int *row, int *col){
 //	printf("%d\n",*col);
 	
 	char arr[*col][*row];
-	int count=0;
 	for(j=0; j<*row ; j++){
 		fgets(temp, sizeof(temp), fp);
 		printf("%s",temp);
 		for(i=0; i<*col ; i++){
 			arr[i][j]=temp[i];
-			count+=(arr[i][j]=='x');
 		}
 	}
-	printf("\n\n\n countt = %d", count);
 }
