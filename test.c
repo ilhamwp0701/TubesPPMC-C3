@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(){
-    printf("test git");
+    printf("test commit");
 
 
     return 0;
-}
+}   
