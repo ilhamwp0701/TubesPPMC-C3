@@ -2,8 +2,10 @@
 #include<stdlib.h>
 #include<conio.h>
 #include<windows.h>
-#include"checking.h"
 #include"display.h"
+#include"checking.h"
+#include"tick.h"
+
 
 int main(){
     int menu,n,i;
