@@ -33,3 +33,10 @@ int checking_neighbour(char **arr, int row, int column, int R, int C) {
     return counter;
 
 }
+
+//    pake ini setelah datanya dimasukin ke matriks
+//    char *matrix[5];
+//    for(int i = 0; i < R; i++) {
+//
+//        matrix[i] = arr[i];
+//    }
