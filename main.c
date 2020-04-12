@@ -1,3 +1,14 @@
+/* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
+ * MODUL 8 – TUGAS BESAR
+ * Kelompok         : C3
+ * Hari dan Tanggal : Minggu, 12 April 2020
+ * Asisten (NIM)    : Wuri Utami (13217024)
+ * Nama File        : main.c
+ * Deskripsi        : Program untuk menggabungkan setiap fungsi dan menjalankan operasi sesuai problem yang diberikan
+ *
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
