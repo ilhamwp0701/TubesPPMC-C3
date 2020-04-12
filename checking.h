@@ -5,7 +5,7 @@
  * Asisten (NIM)    : Wuri Utami (13217024)
  * Nama File        : checking.h
  * Deskripsi        : Library berisi fungsi untuk mengecek berapa tetangga yang hidup pada suatu matriks toroidal
- * 
+ *
 */
 
 // Fungsi Modulo
@@ -18,14 +18,14 @@ int mod(int x, int y) {
 
 // Fungsi Cek Tetangga
 // Return Banyak Tetangga Hidup
-int checking_neighbour(char **arr, int row, int column, int R, int C) {
+int checking_neighbour(char *arr, int row, int column, int R, int C) {
 
     int counter = 0, i, j;
 
     for(i = -1; i < 2; i++) {
         for(j = -1; j < 2; j++) {
             if(i != 0 || j != 0) {
-                counter += arr[mod(row+i,R)][mod(column+j,C)] == 'x';
+                counter += *((arr+(mod(row+i,R))*column) + (mod(column+j,C))) == 'x';
             }
         }
     }
