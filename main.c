@@ -16,37 +16,47 @@
 #include"display.h"
 #include"checking.h"
 #include"tick.h"
+#include"getRowCol.h"
+#include"arrayGenerator.h"
 
 
 int main(){
-    int menu,n,i;
+    int menu,n,i,j;
     int max_row,max_col;
+    char filename[20];
+    char *file;
 
-    displayjudul();
-    getrowcol(&max_row,&max_col);
+    printf("Masukkan nama file : ");
+	scanf("%s",&filename);
+	file=filename;
+	FILE *fp = fopen( file , "r");
+
+    //displayjudul();
+    getRowCol(&max_row,&max_col,fp);
 
     char currentgen[max_row][max_col];
 
-    readfile();
+    arrayGenerator(max_row,max_col,*currentgen,fp);
+    fclose(fp);
 
-    displaymenu();
+    //displaymenu();
     scanf("%d",&menu);
     while(menu != 0){
         if(menu==1){
-            tick();
-            displaymatrix();
+            tick(*currentgen,max_row,max_col);
+            //displaymatrix();
         }
         else if(menu==2){
             printf("Masukkan Banyak perulangan: ");
             scanf("%d",&n);
             for(i=0;i<n;i++){
-                tick();
-                displaymatrix();
+                tick(*currentgen,max_row,max_col);
+                //displaymatrix();
                 system("cls");
-                sleep(250);
+                Sleep(250);
             }
         }
-        displaymenu();
+        //displaymenu();
         scanf("%d",&menu);
     }
 }
