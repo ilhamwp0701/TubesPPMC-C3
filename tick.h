@@ -8,7 +8,7 @@
  *
 */
 
-#include"cheking.h"
+//#include"checking.h"
 
 void tick(char *matriks,int row,int col){
     int i,j;
@@ -16,20 +16,20 @@ void tick(char *matriks,int row,int col){
 
     for(i=0;i<row;i++){
         for(j=0;j<col;j++){
-            if(matriks[i][j]=="x"){
-                if(chek_neighbour(*matriks,i,j,row,col)==2 || chek_neighbour(*matriks,i,j,row,col)==3){
-                    nextgen[i][j]="x";
+            if(*((matriks+i*col) + j)=='x'){
+                if(checking_neighbour(matriks,i,j,row,col)==2 || checking_neighbour(matriks,i,j,row,col)==3){
+                    nextgen[i][j]='x';
                 }
                 else{
-                    nextgen[i][j]="-";
+                    nextgen[i][j]='-';
                 }
             }
             else{
-                if(chek_neighbour(*matriks,i,j,row,col)==3){
-                    nextgen[i][j]="x";
+                if(checking_neighbour(matriks,i,j,row,col)==3){
+                    nextgen[i][j]='x';
                 }
                 else{
-                    nextgen[i][j]="-";
+                    nextgen[i][j]='-';
                 }
             }
         }
