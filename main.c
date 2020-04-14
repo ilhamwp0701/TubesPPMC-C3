@@ -1,7 +1,7 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
  * MODUL 8 – TUGAS BESAR
  * Kelompok         : C3
- * Hari dan Tanggal : Minggu, 12 April 2020
+ * Hari dan Tanggal : Selasa, 14 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
  * Nama File        : main.c
  * Deskripsi        : Program untuk menggabungkan setiap fungsi dan menjalankan operasi sesuai problem yang diberikan
@@ -13,7 +13,7 @@
 #include<stdlib.h>
 #include<conio.h>
 #include<windows.h>
-#include"display.h"
+#include"display.c"
 #include"checking.h"
 #include"tick.h"
 #include"getRowCol.h"
@@ -31,7 +31,6 @@ int main(){
 	file=filename;
 	FILE *fp = fopen( file , "r");
 
-    //displayjudul();
     getRowCol(&max_row,&max_col,fp);
 
     char currentgen[max_row][max_col];
@@ -39,24 +38,28 @@ int main(){
     arrayGenerator(max_row,max_col,*currentgen,fp);
     fclose(fp);
 
-    //displaymenu();
-    scanf("%d",&menu);
-    while(menu != 0){
-        if(menu==1){
+    interface();
+    displaySeed(&max_row,&max_col,*currentgen);
+
+    displayMenu(&menu);
+
+
+    while(menu != 3){
+        if(menu==2){
             tick(*currentgen,max_row,max_col);
-            //displaymatrix();
+            displaySeed(&max_row,&max_col,*currentgen);
         }
-        else if(menu==2){
+        else if(menu==1){
             printf("Masukkan Banyak perulangan: ");
             scanf("%d",&n);
+            system("cls");
             for(i=0;i<n;i++){
                 tick(*currentgen,max_row,max_col);
-                //displaymatrix();
+                displaySeed(&max_row,&max_col,*currentgen);
+                Sleep(400);
                 system("cls");
-                Sleep(250);
             }
         }
-        //displaymenu();
-        scanf("%d",&menu);
+        displayMenu(&menu);
     }
 }
