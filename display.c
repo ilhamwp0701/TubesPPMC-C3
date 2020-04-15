@@ -1,7 +1,7 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
  * MODUL 8 – TUGAS BESAR
  * Kelompok         : C3
- * Hari dan Tanggal : Minggu, 12 April 2020
+ * Hari dan Tanggal : Rabu, 15 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
  * Nama File        : display.c
  * Deskripsi        : library berisi fungsi-fungsi yang digunakan sebagai display pada tugas besar.
@@ -16,55 +16,57 @@
 #include <ctype.h>
 #include "display.h"
 
-#define SIZE 400
-
-void displaySeed(int *baris, int *kolom, char isi[SIZE][SIZE]){
+void displaySeed(int *baris, int *kolom, char *isi){
     int i, j;
 
-    for(j = 0; j < *baris; j++){
-        for(i = 0; i < *kolom; i++){
-            printf("%c", isi[i][j]);
+    for(j = 0; j < *baris; j++){ // untuk indeks elemen baris
+        for(i = 0; i < *kolom; i++){ // untuk indeks elemen kolom
+            printf("%c", *((isi+j*(*kolom))+i)); // mengeprint array 2 dimensi dengan pointer
         }
-    printf("\n");
+    printf("\n"); // untuk membedakan baris
     }
 
     return;
 }
 
-void interface(){
-    system("cls");
+void displayJudul(){
+
+    system("cls"); // membersihkan layar
+
+    // tampilan judul game
     printf("\n");
-    puts("=================================================================================");
-    puts(":WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:");
-    puts("=================================================================================");
-    printf("\n");
-    puts("         ////   /////   //       //  //       //   ///    //  //  //  /////       ");
-    puts("       //     //   //  // //    //  //  //   //  //  //  //  //      //           ");
-    puts("      //     //   //  //  //   //  // // // //  //////  //  //      /////         ");
-    puts("     //     //   //  //    // //  // // // //  //  //    //           //          ");
-    puts("     ////   /////   //       //   ///   ///   //  //    //        /////           ");
-    printf("\n");
-    puts("   |XXXXXX|      |XXXX|    |XXXX|       |XXXX|  |XXXXXX|     |XXXXXX|   |XXXXXX|  ");
-    puts("  |XX|         |XX|  |XX|  |XX| |XX| |XX| |XX|  |XX|        |XX|  |XX|  |XX|      ");
-    puts("  |XX|  |XXX|  |XXXXXXXX|  |XX|  |XXXX|   |XX|  |XXXX|      |XX|  |XX|  |XXXX|    ");
-    puts("  |XX|   |XX|  |XX|  |XX|  |XX|   |XX|    |XX|  |XX|        |XX|  |XX|  |XX|      ");
-    puts("   |XXXXXXX|   |XX|  |XX|  |XX|           |XX|  |XXXXXX|     |XXXXXX|   |XX|      ");
-    printf("\n");  
-    puts("                       |XX|     |XXXX|  |XXXXXX|  |XXXXXX|                        ");
-    puts("                       |XX|      |XX|   |XX|      |XX|                            ");
-    puts("                       |XX|      |XX|   |XXXX|    |XXXX|                          ");
-    puts("                       |XX|      |XX|   |XX|      |XX|                            ");
-    puts("                       |XXXXX|  |XXXX|  |XX|      |XXXXX|                         ");
-    printf("\n");
-    puts("=================================================================================");
-    puts(":WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:");
-    puts("=================================================================================");
+    puts("| ================================================================================= |");
+    puts("| :WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME: |");
+    puts("| ================================================================================= |");
+    puts("|                                                                                   |");
+    puts("|          ////   /////   //       //  //       //   ///    //  //  //  /////       |");
+    puts("|        //     //   //  // //    //  //  //   //  //  //  //  //      //           |");
+    puts("|       //     //   //  //  //   //  // // // //  //////  //  //      /////         |");
+    puts("|      //     //   //  //    // //  // // // //  //  //    //           //          |");
+    puts("|      ////   /////   //       //   ///   ///   //  //    //        /////           |");
+    puts("|                                                                                   |");
+    puts("|    |XXXXXX|      |XXXX|    |XXXX|       |XXXX|  |XXXXXX|     |XXXXXX|   |XXXXXX|  |");
+    puts("|   |XX|         |XX|  |XX|  |XX| |XX| |XX| |XX|  |XX|        |XX|  |XX|  |XX|      |");
+    puts("|   |XX|  |XXX|  |XXXXXXXX|  |XX|  |XXXX|   |XX|  |XXXX|      |XX|  |XX|  |XXXX|    |");
+    puts("|   |XX|   |XX|  |XX|  |XX|  |XX|   |XX|    |XX|  |XX|        |XX|  |XX|  |XX|      |");
+    puts("|    |XXXXXXX|   |XX|  |XX|  |XX|           |XX|  |XXXXXX|     |XXXXXX|   |XX|      |");
+    puts("|                                                                                   |");
+    puts("|                        |XX|     |XXXX|  |XXXXXX|  |XXXXXX|                        |");
+    puts("|                        |XX|      |XX|   |XX|      |XX|                            |");
+    puts("|                        |XX|      |XX|   |XXXX|    |XXXX|                          |");
+    puts("|                        |XX|      |XX|   |XX|      |XX|                            |");
+    puts("|                        |XXXXX|  |XXXX|  |XX|      |XXXXX|                         |");
+    puts("|                                                                                   |");
+    puts("| ================================================================================= |");
+    puts("| :WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME: |");
+    puts("| ================================================================================= |");
     printf("\n");
     printf("Press Any Key to Continue . . . ");
-    getch();
+    getch(); // untuk lanjut ke tampilan berikutnya
 
-    system("cls");
-
+    system("cls"); // membersihkan layar
+    
+    // tampilan deskripsi game
     puts("| =============================================================================== |");
     puts("| ----------------------- D E S K R I P S I  S I N G K A T ---------------------- |");
     puts("| =============================================================================== |");
@@ -79,17 +81,18 @@ void interface(){
     puts("| 2. Jika ada sel mati yang memiliki tepat 3 tetangga hidup maka dia akan hidup   |");
     puts("|    pada iterasi selanjutnya.                                                    |");
     puts("| 3. Semua sel hidup akan mati pada iterasi selanjutnya, kecuali dengan syarat    |");
-    puts("|    seperti yang telah disebutkan sebelumnya.                                    |");    
+    puts("|    seperti yang telah disebutkan sebelumnya.                                    |");
     puts("| 4. Semua sel mati akan tetap mati pada iterasi selanjutnya, kecuali dengan      |");
     puts("|    syarat seperti yang telah disebutkan sebelumnya.                             |");
     puts("| =============================================================================== |");
     printf("\n");
     printf("\n");
     printf("Press Any Key to Continue . . . ");
-    getch();
+    getch(); // untuk lanjut ke tampilan berikutnya
 
-    system("cls");
+    system("cls"); // membersihkan layar
 
+    // tampilan petunjuk permainan dari game
     puts("| =============================================================================== |");
     puts("| ---------------------- P E T U N J U K  P E R M A I N A N --------------------- |");
     puts("| =============================================================================== |");
@@ -99,21 +102,24 @@ void interface(){
     puts("| - Quit untuk keluar dari permainan.                                             |");
     puts("| =============================================================================== |");
     printf("\n");
-    getch();
-    puts("Selamat bermain!\n");
+    getch(); // untuk lanjut ke tampilan berikutnya
+    puts("S E L A M A T  B E R M A I N !!!\n");
     printf("\n");
     printf("Press Any Key to Continue . . . ");
-    getch();
+    getch(); // untuk lanjut ke tampilan berikutnya
 
-    system("cls");
+    system("cls"); // membersihkan layar
 
     return;
 }
 
-void displayMenu(int menu){
+int displayMenu(){
+ 
+    int menu;
 
-    system("cls");
+    system("cls"); // membersihkan layar
 
+    // tampilan menu
     puts("| ================================= |");
     puts("| XXXXXXXXXX-: M E N U :-XXXXXXXXXX |");
     puts("| ================================= |");
@@ -129,25 +135,25 @@ void displayMenu(int menu){
     system("cls");
 
     while(!(menu == 1 || menu == 2 || menu == 3)){
-        puts("Maaf, pilihan anda tidak valid!");
+       puts("Maaf, pilihan anda tidak valid!");
 
-        system("pause");
-        system("cls");
+       system("pause");
+       system("cls");
 
-        puts("| ================================= |");
-        puts("| XXXXXXXXXX-: M E N U :-XXXXXXXXXX |");
-        puts("| ================================= |");
-        puts("| 1. Animate                        |");
-        puts("| 2. Tick                           |");
-        puts("| 3. Quit                           |");
-        puts("| ================================= |");
+       puts("| ================================= |");
+       puts("| XXXXXXXXXX-: M E N U :-XXXXXXXXXX |");
+       puts("| ================================= |");
+       puts("| 1. Animate                        |");
+       puts("| 2. Tick                           |");
+       puts("| 3. Quit                           |");
+       puts("| ================================= |");
 
-        printf("\n");
-        printf("Ketik pilihan anda (nomor saja) : ");
-        scanf("%d", &menu);
+       printf("\n");
+       printf("Ketik pilihan anda (nomor saja) : ");
+       scanf("%d", &menu);
 
-        system("cls");
-    }
+       system("cls");
+   }
 
-    return;
+    return menu;
 }

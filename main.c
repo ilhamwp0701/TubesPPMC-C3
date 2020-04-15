@@ -1,5 +1,5 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
- * MODUL 8 – TUGAS BESAR
+ * MODUL 8 ï¿½ TUGAS BESAR
  * Kelompok         : C3
  * Hari dan Tanggal : Rabu, 15 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
@@ -36,7 +36,7 @@ int main(){
     arrayGenerator(max_row,max_col,*currentgen,fp,filename);
     fclose(fp);
 
-    interface();
+    displayJudul();
     displaySeed(&max_row,&max_col,*currentgen);
 
     displayMenu(&menu);
