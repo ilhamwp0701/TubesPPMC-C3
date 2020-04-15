@@ -13,6 +13,7 @@
 #include<stdlib.h>
 #include<conio.h>
 #include<windows.h>
+#include<string.h>
 #include"display.c"
 #include"checking.h"
 #include"tick.h"
@@ -23,16 +24,16 @@
 int main(){
     int menu,n,i,j;
     int max_row,max_col;
-    char file;
+    char filename[20];
 
 	FILE *fp = NULL;
 
-    getRowCol(&max_row,&max_col,fp,&file);
+    getRowCol(&max_row,&max_col,fp,filename);
     fclose(fp);
 
     char currentgen[max_row][max_col];
 
-    arrayGenerator(max_row,max_col,*currentgen,fp,&file);
+    arrayGenerator(max_row,max_col,*currentgen,fp,filename);
     fclose(fp);
 
     interface();
