@@ -1,5 +1,5 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
- * MODUL 8 – TUGAS BESAR
+ * MODUL 8 ï¿½ TUGAS BESAR
  * Kelompok         : C3
  * Hari dan Tanggal : Selasa, 14 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
@@ -16,8 +16,8 @@
 #include"display.c"
 #include"checking.h"
 #include"tick.h"
-#include"getRowCol.h"
-#include"arrayGenerator.h"
+#include"getRowCol.c"
+#include"arrayGenerator.c"
 
 
 int main(){
@@ -38,7 +38,7 @@ int main(){
     arrayGenerator(max_row,max_col,*currentgen,fp);
     fclose(fp);
 
-    interface();
+    displayJudul();
     displaySeed(&max_row,&max_col,*currentgen);
 
     displayMenu(&menu);
