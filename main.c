@@ -50,12 +50,12 @@ int main(){
         else if(menu==1){
             printf("Masukkan Banyak perulangan: ");
             scanf("%d",&n);
-            system("cls");
+
             for(i=0;i<n;i++){
+                system("cls");
                 tick(*currentgen,max_row,max_col);
                 displaySeed(&max_row,&max_col,*currentgen);
                 Sleep(400);
-                system("cls");
             }
         }
         displayMenu(&menu);
