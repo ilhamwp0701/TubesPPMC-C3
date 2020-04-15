@@ -25,38 +25,46 @@ int main(){
     int menu,n,i,j;
     int max_row,max_col;
     char filename[20];
+    char quit,temp;
 
 	FILE *fp = NULL;
 
-    getRowCol(&max_row,&max_col,fp,filename);
-    fclose(fp);
+    do{
+        displayJudul();
 
-    char currentgen[max_row][max_col];
+        getRowCol(&max_row,&max_col,fp,filename);
+        fclose(fp);
 
-    arrayGenerator(max_row,max_col,*currentgen,fp,filename);
-    fclose(fp);
+        char currentgen[max_row][max_col];
 
-//    displayJudul();
-    displaySeed(&max_row,&max_col,*currentgen);
+        arrayGenerator(max_row,max_col,*currentgen,fp,filename);
+        fclose(fp);
 
-    menu=displayMenu();
+        displaySeed(&max_row,&max_col,*currentgen);
 
-    while(menu != 3){
-        if(menu==2){
-            tick(*currentgen,max_row,max_col);
-            displaySeed(&max_row,&max_col,*currentgen);
-        }
-        else if(menu==1){
-            printf("Masukkan Banyak perulangan: ");
-            scanf("%d",&n);
+        menu=displayMenu();
 
-            for(i=0;i<n;i++){
-                system("cls");
+        while(menu != 3){
+            if(menu==2){
                 tick(*currentgen,max_row,max_col);
                 displaySeed(&max_row,&max_col,*currentgen);
-                Sleep(400);
             }
+            else if(menu==1){
+                printf("Masukkan Banyak perulangan: ");
+                scanf("%d",&n);
+
+                for(i=0;i<n;i++){
+                    system("cls");
+                    tick(*currentgen,max_row,max_col);
+                    displaySeed(&max_row,&max_col,*currentgen);
+                    Sleep(400);
+                }
+            }
+            menu=displayMenu();
         }
-        menu=displayMenu();
-    }
+        printf("Apakah anda akan memasukkan file baru? (Y/N)");
+        scanf("%c",&temp);
+        scanf("%c",&quit);
+        scanf("%c",&temp);
+    }while(quit=='Y' || quit=='y');
 }
