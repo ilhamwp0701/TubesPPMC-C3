@@ -1,5 +1,5 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
- * MODUL 8 � TUGAS BESAR
+ * MODUL 8 - TUGAS BESAR
  * Kelompok         : C3
  * Hari dan Tanggal : Rabu, 15 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
@@ -14,11 +14,11 @@
 #include<conio.h>
 #include<windows.h>
 #include<string.h>
-#include"display.c"
-#include"checking.h"
+#include"display.h"
+//#include"checking.h"
 #include"tick.h"
-#include"getRowCol.c"
-#include"arrayGenerator.c"
+#include"getRowCol.h"
+#include"arrayGenerator.h"
 
 
 int main(){
@@ -36,11 +36,10 @@ int main(){
     arrayGenerator(max_row,max_col,*currentgen,fp,filename);
     fclose(fp);
 
-    displayJudul();
+//    displayJudul();
     displaySeed(&max_row,&max_col,*currentgen);
 
-    displayMenu(&menu);
-
+    menu=displayMenu();
 
     while(menu != 3){
         if(menu==2){
@@ -58,6 +57,6 @@ int main(){
                 Sleep(400);
             }
         }
-        displayMenu(&menu);
+        menu=displayMenu();
     }
 }
