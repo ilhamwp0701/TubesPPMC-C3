@@ -1,12 +1,17 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
- * MODUL 8 – TUGAS BESAR
+ * MODUL 9 – TUGAS BESAR
  * Kelompok         : C3
  * Hari dan Tanggal : Minggu, 12 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
- * Nama File        : main.c
+ * Nama File        : getRowCol.c
  * Deskripsi        : Program untuk menghasilkan panjang baris dan kolom
  *
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "getRowCol.h"
 
 void getRowCol(int *x, int *y, FILE *fp, char *st){
 	// Variable Lokal

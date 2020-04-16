@@ -1,5 +1,5 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
- * MODUL 8 - TUGAS BESAR
+ * MODUL 9 - TUGAS BESAR
  * Kelompok         : C3
  * Hari dan Tanggal : Kamis, 16 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
@@ -7,7 +7,6 @@
  * Deskripsi        : Program untuk menggabungkan setiap fungsi dan menjalankan operasi sesuai problem yang diberikan
  *
 */
-
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -40,6 +39,8 @@ int main(){
         fclose(fp);
 
         displaySeed(&max_row,&max_col,*currentgen);//menampilkan seed
+        printf("\n");
+        system("pause");
 
         menu=displayMenu();//menampilkan menu
 
@@ -47,6 +48,8 @@ int main(){
             if(menu==2){//menu tick
                 tick(*currentgen,max_row,max_col);//proses tick
                 displaySeed(&max_row,&max_col,*currentgen);//menampilkan seed
+                printf("\n");
+                system("pause");
             }
             else if(menu==1){//menu animate
                 printf("Masukkan Banyak perulangan: ");//memasukkan perulangan
@@ -56,8 +59,10 @@ int main(){
                     system("cls");
                     tick(*currentgen,max_row,max_col);
                     displaySeed(&max_row,&max_col,*currentgen);
-                    Sleep(400);
+                    Sleep(250);
                 }
+                printf("\n");
+                system("pause");
             }
             menu=displayMenu();//menampilkan menu
         }

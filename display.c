@@ -1,5 +1,5 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
- * MODUL 8 – TUGAS BESAR
+ * MODUL 9 – TUGAS BESAR
  * Kelompok         : C3
  * Hari dan Tanggal : Rabu, 15 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
@@ -16,6 +16,7 @@
 #include <ctype.h>
 #include "display.h"
 
+// fungsi untuk menampilkan array 2 dimensi
 void displaySeed(int *baris, int *kolom, char *isi){
     int i, j;
 
@@ -29,6 +30,7 @@ void displaySeed(int *baris, int *kolom, char *isi){
     return;
 }
 
+// fungsi untuk menampilkan judul
 void displayJudul(){
 
     system("cls"); // membersihkan layar
@@ -61,7 +63,7 @@ void displayJudul(){
     puts("| :WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME:WELCOME: |");
     puts("| ================================================================================= |");
     printf("\n");
-    printf("Press Any Key to Continue . . . ");
+    printf("Press any key to Continue . . . ");
     getch(); // untuk lanjut ke tampilan berikutnya
 
     system("cls"); // membersihkan layar
@@ -87,7 +89,7 @@ void displayJudul(){
     puts("| =============================================================================== |");
     printf("\n");
     printf("\n");
-    printf("Press Any Key to Continue . . . ");
+    printf("Press any key to Continue . . . ");
     getch(); // untuk lanjut ke tampilan berikutnya
 
     system("cls"); // membersihkan layar
@@ -105,7 +107,7 @@ void displayJudul(){
     getch(); // untuk lanjut ke tampilan berikutnya
     puts("S E L A M A T  B E R M A I N !!!\n");
     printf("\n");
-    printf("Press Any Key to Continue . . . ");
+    printf("Press any key to Continue . . . ");
     getch(); // untuk lanjut ke tampilan berikutnya
 
     system("cls"); // membersihkan layar
@@ -113,6 +115,7 @@ void displayJudul(){
     return;
 }
 
+// fungsi untuk menampilkan menu dan menerima input menu dari user
 int displayMenu(){
  
     int menu;
@@ -136,7 +139,7 @@ int displayMenu(){
 
     while(!(menu == 1 || menu == 2 || menu == 3)){
        puts("Maaf, pilihan anda tidak valid!");
-
+       printf("\n");
        system("pause");
        system("cls");
 
