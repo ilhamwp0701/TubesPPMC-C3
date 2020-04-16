@@ -1,7 +1,7 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
- * MODUL 9 – TUGAS BESAR
+ * MODUL 9 - TUGAS BESAR
  * Kelompok         : C3
- * Hari dan Tanggal : Rabu, 15 April 2020
+ * Hari dan Tanggal : Kamis, 16 April 2020
  * Asisten (NIM)    : Wuri Utami (13217024)
  * Nama File        : display.c
  * Deskripsi        : library berisi fungsi-fungsi yang digunakan sebagai display pada tugas besar.
@@ -67,7 +67,7 @@ void displayJudul(){
     getch(); // untuk lanjut ke tampilan berikutnya
 
     system("cls"); // membersihkan layar
-    
+
     // tampilan deskripsi game
     puts("| =============================================================================== |");
     puts("| ----------------------- D E S K R I P S I  S I N G K A T ---------------------- |");
@@ -117,7 +117,7 @@ void displayJudul(){
 
 // fungsi untuk menampilkan menu dan menerima input menu dari user
 int displayMenu(){
- 
+
     int menu;
 
     system("cls"); // membersihkan layar
