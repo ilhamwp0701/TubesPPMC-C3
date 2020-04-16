@@ -24,14 +24,14 @@
 int main(){
     int menu,n,i,j;
     int max_row,max_col;
-    char filename[20];
+    char filename[50];
     char quit,temp;
 
 	FILE *fp = NULL;
 
-    do{
-        displayJudul();
+    displayJudul();
 
+    do{
         getRowCol(&max_row,&max_col,fp,filename);
         fclose(fp);
 
